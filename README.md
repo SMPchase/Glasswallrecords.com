@@ -1,20 +1,17 @@
-# Glasswall Records
+# GlassWall Records starter website
 
-**Glasswall Records** is a label and creative house built for presence — not pretense.
+This is a static starter site for GlassWall Records / Glasswall.
 
-## 📍 Why Here?
-Based in **Havre de Grace, Maryland**, Glasswall thrives at the intersection of **Baltimore grit** and **Philly soul**. It’s a cultural pressure point with small-town clarity and big-market reach — the kind of place where artists can go quiet just long enough to hear themselves clearly.
+## Files
+- `index.html` — page structure and copy
+- `styles.css` — responsive styling and color themes
+- `script.js` — theme switcher, scroll reveal, intake helper, mailto contact form
 
-## 💡 What Sets Us Apart
-We're not chasing trends — we're building legacies. Glasswall is an incubator for artistry, ownership, and identity. We don’t do factory sounds. We do real voices, real vision.
+## Before publishing
+1. Replace `hello@glasswallrecords.com` in `script.js` with the real inbox.
+2. Replace artist placeholders with real signed artists, collaborators, or house projects.
+3. Add real release links, shop links, social links, and legal footer links.
+4. Connect the form to a backend later if you want submissions saved instead of email drafts.
 
-## 🎙️ Artist First, Always
-At Glasswall, we don’t just release music — we build artists. From vocal growth and creative confidence to identity and direction, we’re hands-on with every layer of your evolution. This is where raw talent becomes undeniable presence.
-
-## 🌐 Links
-- Visit our studio: [Echohaus](https://echohaushq.com)
-- Contact us: [contact@glasswallrecords.com](mailto:contact@glasswallrecords.com)
-
----
-
-© 2025 Glasswall Records. Powered by artists who build — not borrow.
+## GitHub Pages deploy
+Upload these files to a repository, then enable GitHub Pages from the repository settings. Use the root folder as the source.

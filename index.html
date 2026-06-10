@@ -1,56 +1,344 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Glasswall Records</title>
-  <link href="styles.css" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GlassWall Records is a local creative label and artist support house helping artists make music, release it, sell it, and build sustainable momentum." />
+  <title>GlassWall Records — Artist Support, Releases & Creative Strategy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header>
-    <h1>GLASSWALL RECORDS</h1>
-    <p>A label and creative house built for presence — not pretense.</p>
+<body data-theme="night">
+  <div class="noise" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="GlassWall Records home">
+      <span class="brand-mark">GW</span>
+      <span>
+        <strong>GlassWall</strong>
+        <small>Records / Creative House</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#mission">Mission</a>
+      <a href="#services">Services</a>
+      <a href="#artists">Artists</a>
+      <a href="#studio">Studio</a>
+      <a href="#intake">Intake</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-button" type="button" data-theme-toggle aria-label="Change color theme">Theme</button>
+      <a class="pill-button" href="#contact">Start</a>
+    </div>
   </header>
 
-  <section>
-    <h2>Why Here?</h2>
-    <p>Based in <strong>Havre de Grace, Maryland</strong>, Glasswall thrives at the intersection of <strong>Baltimore grit</strong> and <strong>Philly soul</strong>. It’s a cultural pressure point with small-town clarity and big-market reach — the kind of place where artists can go quiet just long enough to hear themselves clearly.</p>
-  </section>
-
-  <section>
-    <h2>What Sets Us Apart</h2>
-    <p>We're not chasing trends — we're building legacies. Glasswall is an incubator for artistry, ownership, and identity. We don’t do factory sounds. We do real voices, real vision.</p>
-  </section>
-
-  <section>
-    <h2>Artist First, Always</h2>
-    <p>At Glasswall, we don’t just release music — <strong>we build artists</strong>. From vocal growth and creative confidence to identity and direction, we’re hands-on with every layer of your evolution. This is where raw talent becomes undeniable presence.</p>
-  </section>
-
-  <section>
-    <h2>Our Artists</h2>
-    <div class="artist-grid">
-      <div class="artist-card">
-        <img src="https://via.placeholder.com/250x250.png?text=Artist+1" alt="Artist 1" />
-        <h3>Artist Name 1</h3>
-        <p>Genre or mood description here.</p>
+  <main id="main">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Locally called Glasswall · Built for artists, managers, beginners, and builders</p>
+        <h1>Make the record. Build the story. Sell the world around it.</h1>
+        <p class="lede">GlassWall Records is a local music company for artists who need more than advice. We help with songs, production, release strategy, merch, physical records, content, shows, sponsorship readiness, and the kind of plan that makes an artist feel less alone.</p>
+        <div class="hero-buttons">
+          <a class="button primary" href="#intake">Find your artist path</a>
+          <a class="button ghost" href="#model">See the model</a>
+        </div>
       </div>
-      <div class="artist-card">
-        <img src="https://via.placeholder.com/250x250.png?text=Artist+2" alt="Artist 2" />
-        <h3>Artist Name 2</h3>
-        <p>Genre or mood description here.</p>
+
+      <aside class="hero-card reveal" aria-label="GlassWall company snapshot">
+        <div class="glass-logo" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <p class="card-kicker">What we are right now</p>
+        <h2>A label-shaped support system.</h2>
+        <p>Not fake major-label cosplay. Not a cold consultant. GlassWall starts as a creative house for people who need help turning music into releases, products, events, and repeatable income.</p>
+        <div class="mini-grid">
+          <span>Production</span>
+          <span>A&R</span>
+          <span>Rollouts</span>
+          <span>Events</span>
+          <span>Merch</span>
+          <span>Monetization</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="ticker" aria-label="GlassWall focus areas">
+      <div>
+        <span>records</span><span>studio time</span><span>short-form content</span><span>release strategy</span><span>vinyl</span><span>CDs</span><span>shows</span><span>brand decks</span><span>sponsorships</span><span>publishing prep</span><span>artist development</span><span>local culture</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="cta">
-    <a href="mailto:contact@glasswallrecords.com">Contact Us</a>
-    <a href="https://echohaushq.com" target="_blank">Visit Echohaus</a>
-  </section>
+    <section class="section-shell split" id="mission">
+      <div class="section-label reveal">01 / Mission</div>
+      <div class="section-content reveal">
+        <h2>GlassWall means transparent support without making artists feel trapped.</h2>
+        <p>Artists should be able to see the plan, the money, the timeline, and the next step. The wall is glass because nothing is hidden. The wall is still a wall because the artist deserves protection, taste, structure, and a team.</p>
+        <div class="quote-card">
+          <p>“We help artists make the thing, package the thing, release the thing, sell the thing, and perform the thing — without pretending they already have a machine behind them.”</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Glasswall Records. All rights reserved.<br>Powered by artists who build — not borrow.</p>
-    <p><a href="mailto:jules@glasswallrecords.com">jules@glasswallrecords.com</a></p>
+    <section class="section-shell model" id="model">
+      <div class="section-head reveal">
+        <p class="eyebrow">The GlassWall model</p>
+        <h2>Part label. Part creative house. Part artist services desk.</h2>
+      </div>
+      <div class="model-grid">
+        <article class="model-card reveal">
+          <span class="number">01</span>
+          <h3>Make</h3>
+          <p>Production, writing rooms, recording plans, vocal direction, arrangement, beat selection, and finishing songs that actually sound releasable.</p>
+        </article>
+        <article class="model-card reveal">
+          <span class="number">02</span>
+          <h3>Package</h3>
+          <p>Cover art direction, video ideas, press photos, short-form concepts, artist bios, merch ideas, physical product planning, and release assets.</p>
+        </article>
+        <article class="model-card reveal">
+          <span class="number">03</span>
+          <h3>Publish</h3>
+          <p>Distribution setup guidance, DSP profiles, credits, lyric delivery, content calendar, pre-save pages, email capture, and launch-day checklists.</p>
+        </article>
+        <article class="model-card reveal">
+          <span class="number">04</span>
+          <h3>Sell</h3>
+          <p>Merch drops, direct-to-fan offers, show tickets, bundles, sponsorship decks, brand-fit lists, and local partnerships that make the project real.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="pathways">
+      <div class="section-head reveal">
+        <p class="eyebrow">Who this is for</p>
+        <h2>Four doors into GlassWall.</h2>
+      </div>
+      <div class="pathway-grid">
+        <article class="path-card reveal">
+          <h3>I just started.</h3>
+          <p>You bought FL, Logic, a guitar, a mic, or nothing yet. You need taste, direction, a first session, and someone to make it less scary.</p>
+          <a href="#intake">Beginner path</a>
+        </article>
+        <article class="path-card reveal">
+          <h3>I have songs.</h3>
+          <p>You have demos, snippets, or a project. You need help finishing, sequencing, making content, and turning the music into a release.</p>
+          <a href="#intake">Release path</a>
+        </article>
+        <article class="path-card reveal">
+          <h3>I manage an artist.</h3>
+          <p>You need an outside creative partner, rollout structure, production support, local events, or a clean plan for monetization.</p>
+          <a href="#contact">Manager path</a>
+        </article>
+        <article class="path-card reveal">
+          <h3>I’m a brand or venue.</h3>
+          <p>You want music-led content, a showcase, a sponsored moment, or a local culture partnership with artists attached.</p>
+          <a href="#contact">Partner path</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell services" id="services">
+      <div class="section-head reveal">
+        <p class="eyebrow">Services</p>
+        <h2>What goes on here besides “we have artists.”</h2>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <h3>Artist Development</h3>
+          <p>Identity, sound, references, project direction, confidence, and a realistic next move.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Production & A&R</h3>
+          <p>Beats, recording direction, hooks, arrangement, demo cleanup, feedback, and song finishing.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Release Strategy</h3>
+          <p>Timeline, singles, metadata, credits, distribution prep, DSP profile polish, and launch checklists.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Content & Visuals</h3>
+          <p>Shorts, lyric videos, behind-the-scenes, press photos, cover concepts, and artist-world building.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Physical & Merch</h3>
+          <p>CDs, tapes, vinyl planning, shirts, bundles, pop-ups, and direct-to-fan product ideas.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Events & Studio</h3>
+          <p>Showcases, listening rooms, writing nights, studio sessions, and local events with Echo House and Mostly Just Storage Studio.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Monetization Prep</h3>
+          <p>Streaming basics, YouTube cleanup, email lists, store setup, sponsorship decks, and brand-fit strategy.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Manager Support</h3>
+          <p>Release planning, asset lists, artist positioning, rollout calendars, and clear language for the team.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell artists" id="artists">
+      <div class="section-head reveal">
+        <p class="eyebrow">Roster / House projects</p>
+        <h2>Honest now. Expand later.</h2>
+        <p class="muted">GlassWall does not need to fake a giant roster. This section can start as “house projects” and become an official roster when deals are real.</p>
+      </div>
+      <div class="artist-grid">
+        <article class="artist-card feature reveal">
+          <div class="artist-art saint" aria-hidden="true"></div>
+          <div>
+            <span class="tag">House project</span>
+            <h3>Saint Jules</h3>
+            <p>Pop writing, film-world storytelling, performance, visual rollouts, and the “make it feel like a whole universe” side of GlassWall.</p>
+            <a href="#releases">View release lane</a>
+          </div>
+        </article>
+        <article class="artist-card reveal">
+          <div class="artist-art jaden" aria-hidden="true"></div>
+          <div>
+            <span class="tag">Collaborator lane</span>
+            <h3>Jaden</h3>
+            <p>Underground trap energy, producer-led development, session building, and raw records that need the right world around them.</p>
+            <a href="#contact">Build a rollout</a>
+          </div>
+        </article>
+        <article class="artist-card open-slot reveal">
+          <div class="artist-art open" aria-hidden="true"></div>
+          <div>
+            <span class="tag">Open</span>
+            <h3>Next local artist</h3>
+            <p>For artists with real potential who need structure, not a fake promise. Start with a session, a plan, and proof of work.</p>
+            <a href="#intake">Apply / inquire</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell releases" id="releases">
+      <div class="section-head reveal">
+        <p class="eyebrow">New music / shop</p>
+        <h2>Releases, products, and proof.</h2>
+      </div>
+      <div class="release-grid">
+        <article class="release-card reveal">
+          <span class="release-art pink">GW</span>
+          <p class="card-kicker">Coming soon</p>
+          <h3>The Proposition</h3>
+          <p>Single rollout, visualizer, short-form clips, and physical bundle lane.</p>
+          <button type="button" class="mini-button">Notify me</button>
+        </article>
+        <article class="release-card reveal">
+          <span class="release-art dark">JS</span>
+          <p class="card-kicker">In development</p>
+          <h3>Jaden Session Files</h3>
+          <p>Producer-built records, cover direction, and a first rollout system.</p>
+          <button type="button" class="mini-button">Follow progress</button>
+        </article>
+        <article class="release-card reveal">
+          <span class="release-art clear">01</span>
+          <p class="card-kicker">Product lane</p>
+          <h3>GlassWall Starter Pack</h3>
+          <p>Local compilation, zine, CD, shirt, or ticket bundle once the community is ready.</p>
+          <button type="button" class="mini-button">Add to roadmap</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell studio" id="studio">
+      <div class="studio-panel reveal">
+        <p class="eyebrow">Echo House × Mostly Just Storage Studio</p>
+        <h2>A room, a rollout, and a reason to show up.</h2>
+        <p>GlassWall can live between the studio and the event space: writing nights, listening parties, small showcases, artist clinics, video shoots, merch pickups, and sessions where beginners can walk in without feeling dumb.</p>
+        <div class="studio-list">
+          <span>Listening parties</span>
+          <span>Writing camps</span>
+          <span>Release nights</span>
+          <span>Beginner sessions</span>
+          <span>Manager clinics</span>
+          <span>Content days</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell intake" id="intake">
+      <div class="section-head reveal">
+        <p class="eyebrow">Artist intake helper</p>
+        <h2>Pick your lane. Get a starting recommendation.</h2>
+      </div>
+      <div class="intake-grid reveal">
+        <form class="intake-form" data-intake-form>
+          <label>
+            Where are you right now?
+            <select name="stage">
+              <option value="beginner">I’m brand new and need help starting.</option>
+              <option value="demos">I have demos/snippets.</option>
+              <option value="release">I have a song or project ready.</option>
+              <option value="manager">I manage or help an artist.</option>
+            </select>
+          </label>
+          <label>
+            What do you need most?
+            <select name="need">
+              <option value="sound">Sound, production, or A&R.</option>
+              <option value="rollout">Release rollout and content.</option>
+              <option value="money">Streams, merch, sponsorships, or monetization.</option>
+              <option value="events">Studio, events, showcases, or community.</option>
+            </select>
+          </label>
+          <label>
+            What is your next deadline?
+            <select name="timeline">
+              <option value="soon">This month.</option>
+              <option value="quarter">Next 90 days.</option>
+              <option value="later">I’m building slowly.</option>
+            </select>
+          </label>
+          <button class="button primary" type="submit">Recommend my path</button>
+        </form>
+        <aside class="recommendation" data-recommendation aria-live="polite">
+          <p class="card-kicker">Recommendation</p>
+          <h3>Starter Session</h3>
+          <p>Book one focused creative session: define your sound, choose the next song, make a simple content plan, and leave with one clear next move.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-shell contact" id="contact">
+      <div class="contact-card reveal">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Tell GlassWall what you’re building.</h2>
+          <p>Use this as the first version. When you connect it to a real backend later, it can become a proper artist intake form.</p>
+        </div>
+        <form class="contact-form" data-contact-form>
+          <label>
+            Name / artist name
+            <input name="name" type="text" placeholder="Saint Somebody" required>
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            What are you looking for?
+            <textarea name="message" rows="5" placeholder="I need help finishing songs, planning a rollout, booking studio time, or building merch..."></textarea>
+          </label>
+          <button class="button primary" type="submit">Create email draft</button>
+          <p class="form-note" data-form-note>This form opens an email draft so it works without a backend.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>GlassWall Records</strong> — transparent artist support from song to sale.</p>
+    <p>© <span data-year></span> GlassWall. Built as a starter site. Replace placeholder contact, socials, releases, and legal copy before publishing.</p>
   </footer>
 
   <script src="script.js"></script>
