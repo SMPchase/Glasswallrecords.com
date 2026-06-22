@@ -1,66 +1,92 @@
-const themes = ['night', 'clear', 'tape'];
 const body = document.body;
-const themeButton = document.querySelector('[data-theme-toggle]');
-const storedTheme = localStorage.getItem('glasswall-theme');
-if (storedTheme && themes.includes(storedTheme)) body.dataset.theme = storedTheme;
+const header = document.querySelector('[data-header]');
+const menuToggle = document.querySelector('[data-menu-toggle]');
+const menu = document.querySelector('[data-menu]');
+const progress = document.querySelector('[data-scroll-progress]');
+let lastScrollY = window.scrollY;
 
-themeButton?.addEventListener('click', () => {
-  const current = body.dataset.theme || 'night';
-  const next = themes[(themes.indexOf(current) + 1) % themes.length];
-  body.dataset.theme = next;
-  localStorage.setItem('glasswall-theme', next);
-  themeButton.textContent = next === 'night' ? 'Theme' : next[0].toUpperCase() + next.slice(1);
-});
+const updateHeader = () => {
+  const y = window.scrollY;
+  header?.classList.toggle('scrolled', y > 24);
 
-const revealItems = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-revealItems.forEach((item) => observer.observe(item));
-
-document.querySelector('[data-year]').textContent = new Date().getFullYear();
-
-const intakeForm = document.querySelector('[data-intake-form]');
-const recommendation = document.querySelector('[data-recommendation]');
-const recommendations = {
-  beginner: {
-    title: 'Beginner Starter Session',
-    body: 'Start with one low-pressure session. Pick your references, make or choose one beat, record a rough idea, and leave with a simple 30-day plan.'
-  },
-  demos: {
-    title: 'Demo-to-Release Sprint',
-    body: 'Choose the strongest demo, finish the record, make the cover/content list, and build a rollout that does not depend on luck.'
-  },
-  release: {
-    title: 'Release & Product Launch',
-    body: 'Lock metadata, visuals, short-form clips, store ideas, email capture, and one physical or event-based offer around the music.'
-  },
-  manager: {
-    title: 'Manager Support Plan',
-    body: 'Build a clean one-sheet: artist position, rollout calendar, needed assets, potential partners, and next revenue plays.'
-  },
-  money: {
-    title: 'Monetization Readiness Audit',
-    body: 'Review streaming, YouTube, merch, show, sponsorship, and direct-to-fan paths. Then pick the fastest honest revenue move.'
-  },
-  events: {
-    title: 'Studio / Event Buildout',
-    body: 'Shape a listening room, content day, writing camp, or small showcase that gives the artist a real-world moment.'
+  if (y > 250 && y > lastScrollY && !body.classList.contains('menu-open')) {
+    header?.classList.add('header-hidden');
+  } else {
+    header?.classList.remove('header-hidden');
   }
+
+  lastScrollY = y;
+
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const percentage = scrollable > 0 ? (y / scrollable) * 100 : 0;
+  if (progress) progress.style.width = `${percentage}%`;
 };
 
-intakeForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const data = new FormData(intakeForm);
-  const stage = data.get('stage');
-  const need = data.get('need');
-  const pick = recommendations[need] && (need === 'money' || need === 'events') ? recommendations[need] : recommendations[stage];
-  recommendation.innerHTML = `<p class="card-kicker">Recommendation</p><h3>${pick.title}</h3><p>${pick.body}</p><a class="button ghost" href="#contact">Send this inquiry</a>`;
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
+
+const closeMenu = () => {
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  menu?.classList.remove('open');
+  body.classList.remove('menu-open');
+};
+
+menuToggle?.addEventListener('click', () => {
+  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', String(!isOpen));
+  menu?.classList.toggle('open', !isOpen);
+  body.classList.toggle('menu-open', !isOpen);
+  header?.classList.remove('header-hidden');
+});
+
+menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+
+const reveals = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach((item) => revealObserver.observe(item));
+} else {
+  reveals.forEach((item) => item.classList.add('is-visible'));
+}
+
+const serviceRows = document.querySelectorAll('.service-row');
+serviceRows.forEach((row) => {
+  const button = row.querySelector('.service-toggle');
+  const detail = row.querySelector('.service-detail');
+  const icon = row.querySelector('.service-icon');
+
+  button?.addEventListener('click', () => {
+    const willOpen = button.getAttribute('aria-expanded') !== 'true';
+
+    serviceRows.forEach((otherRow) => {
+      const otherButton = otherRow.querySelector('.service-toggle');
+      const otherDetail = otherRow.querySelector('.service-detail');
+      const otherIcon = otherRow.querySelector('.service-icon');
+      otherButton?.setAttribute('aria-expanded', 'false');
+      if (otherDetail) otherDetail.hidden = true;
+      if (otherIcon) otherIcon.textContent = '+';
+    });
+
+    if (willOpen) {
+      button.setAttribute('aria-expanded', 'true');
+      if (detail) detail.hidden = false;
+      if (icon) icon.textContent = '−';
+    }
+  });
+});
+
+const messageField = document.querySelector('textarea[name="message"]');
+document.querySelectorAll('[data-prefill]').forEach((link) => {
+  link.addEventListener('click', () => {
+    if (messageField && !messageField.value.trim()) messageField.value = link.dataset.prefill || '';
+  });
 });
 
 const contactForm = document.querySelector('[data-contact-form]');
@@ -68,11 +94,19 @@ const formNote = document.querySelector('[data-form-note]');
 contactForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const data = new FormData(contactForm);
-  const name = data.get('name')?.toString().trim() || 'Artist inquiry';
-  const email = data.get('email')?.toString().trim() || '';
-  const message = data.get('message')?.toString().trim() || '';
-  const subject = encodeURIComponent(`GlassWall inquiry — ${name}`);
-  const body = encodeURIComponent(`Name / artist name: ${name}\nEmail: ${email}\n\nWhat I'm building:\n${message}\n\nSent from the GlassWall website starter form.`);
-  window.location.href = `mailto:hello@glasswallrecords.com?subject=${subject}&body=${body}`;
-  formNote.textContent = 'Email draft opened. Change hello@glasswallrecords.com to your real inbox before publishing.';
+  const name = String(data.get('name') || '').trim();
+  const email = String(data.get('email') || '').trim();
+  const stage = String(data.get('stage') || '').trim();
+  const message = String(data.get('message') || '').trim();
+
+  const subject = encodeURIComponent(`Glasswall project inquiry — ${name || 'New project'}`);
+  const emailBody = encodeURIComponent(
+`Name / artist: ${name}\nEmail: ${email}\nStage: ${stage}\n\nWhat I am building:\n${message}`
+  );
+
+  window.location.href = `mailto:hello@glasswallrecords.com?subject=${subject}&body=${emailBody}`;
+  if (formNote) formNote.textContent = 'Your email draft is ready. Review it, then send.';
 });
+
+const year = document.querySelector('[data-year]');
+if (year) year.textContent = new Date().getFullYear();
