@@ -19,3 +19,7 @@ Search all three files for `hello@glasswallrecords.com` and replace it only if a
 ## Adding images later
 
 The current build intentionally does not depend on images. Images can later be added as project case studies without leaving empty placeholder blocks in the live site.
+
+## Connected studio
+
+The Studio section links to `https://mostlyjuststorage.studio` as Glasswall’s physical home base.

@@ -345,6 +345,19 @@ h1 em { color: var(--acid); font-style: normal; }
 .eyebrow-label { display: block; margin-bottom: 1rem; color: var(--blue); }
 .studio-copy p { max-width: 670px; font-size: clamp(1.1rem, 2vw, 1.45rem); line-height: 1.58; }
 .studio-pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; }
+.studio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  margin-top: 1.8rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 800;
+}
+.studio-link span { transition: transform .2s ease; }
+.studio-link:hover span { transform: translate(3px, -3px); }
 .note-section { padding-top: 0; background: var(--paper-2); }
 .big-note {
   display: grid;
