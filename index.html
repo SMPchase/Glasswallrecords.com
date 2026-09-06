@@ -3,280 +3,270 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b0b0d" />
-  <meta name="description" content="Glasswall is a music company helping artists start, finish, release, and build around their work." />
-  <title>Glasswall — Music needs a team.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#151515" />
+  <meta name="description" content="Glasswall Records is an independent Maryland label releasing music and supporting artists." />
+  <link rel="canonical" href="https://glasswallrecords.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Glasswall Records" />
+  <meta property="og:title" content="Glasswall Records — Independent label" />
+  <meta property="og:description" content="An independent Maryland label. Meet the artists, hear releases, and submit your work." />
+  <meta property="og:url" content="https://glasswallrecords.com/" />
+  <meta property="og:image" content="https://glasswallrecords.com/assets/glasswall-social-card.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Glasswall Records editorial film artwork" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Glasswall Records — Independent label</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Glasswall Records",
+      "url": "https://glasswallrecords.com/",
+      "email": "hello@glasswallrecords.com",
+      "description": "An independent record label based in Maryland."
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
 
   <header class="site-header" data-header>
-    <a class="brand" href="#top" aria-label="Glasswall home">
-      <span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-      <span class="brand-word">GLASSWALL</span>
+    <a class="wordmark" href="#top" aria-label="Glasswall Records home">
+      <span>GLASSWALL</span>
+      <small>RECORDS</small>
     </a>
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-button>
       <span>Menu</span>
-      <i></i>
+      <i aria-hidden="true"></i>
     </button>
 
-    <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-menu>
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#for-you">For you</a>
-      <a href="#studio">Studio</a>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-menu>
+      <a href="#artists">Artists</a>
+      <a href="#releases">Releases</a>
+      <a href="#about">About</a>
+      <a href="#submit">Submissions</a>
     </nav>
-
-    <a class="header-cta" href="#contact">Start a project <span aria-hidden="true">↗</span></a>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="hero-grid" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span>
+      <div class="hero-copy">
+        <p class="edition-line"><span>Independent record label</span><span>Maryland, USA</span></p>
+        <h1>Glasswall<br /><span>Records</span></h1>
+        <p class="hero-intro" data-site-intro>
+          Glasswall Records is an independent label based in Maryland. We release music and work directly with artists across recording, production, visual direction, rollout, and live opportunities.
+        </p>
+        <div class="hero-links">
+          <a class="arrow-link" href="#artists">Meet the artists <span aria-hidden="true">↘</span></a>
+          <a class="arrow-link quiet" href="#submit">Work with us <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
 
-      <div class="hero-topline reveal">
-        <span>Independent music company</span>
-        <span>Maryland · working everywhere</span>
-      </div>
+      <figure class="hero-art" data-hero-art aria-label="Glasswall Records label artwork" hidden>
+        <div class="film-edge" aria-hidden="true">
+          <span>GLASSWALL RECORDS</span><span>MARYLAND</span>
+        </div>
+        <div class="film-frame" data-hero-frame>
+          <div class="film-title" aria-hidden="true">
+            <span>GLASS</span>
+            <span>WALL</span>
+          </div>
+          <p>RECORDS + DEVELOPMENT<br />MARYLAND, USA</p>
+        </div>
+        <figcaption>
+          <span>INDEPENDENT LABEL</span>
+          <span>MARYLAND</span>
+        </figcaption>
+      </figure>
 
-      <div class="hero-main">
-        <div class="hero-copy reveal">
-          <p class="kicker">You do not have to build it alone.</p>
-          <h1>Music needs<br />a <em>team.</em></h1>
-          <p class="hero-intro">Glasswall helps artists make the song, finish the release, and build something real around it.</p>
-          <div class="hero-actions">
-            <a class="button button-solid" href="#contact">Tell us what you’re making</a>
-            <a class="text-link" href="#services">See how we help <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="artist-reel" id="artists" aria-label="Glasswall Records artists" data-artist-reel>
+      <div class="reel-sticky" data-reel-sticky>
+        <div class="reel-topline">
+          <div class="section-label">
+            <p>Meet the artists</p>
+          </div>
+          <p class="reel-instruction">Scroll to reveal <i aria-hidden="true">↓</i></p>
+        </div>
+
+        <div class="reel-controls" aria-label="Artist reel controls">
+          <button type="button" data-reel-previous aria-label="Previous frame">↑</button>
+          <div class="reel-progress" aria-hidden="true"><i data-reel-progress></i></div>
+          <button type="button" data-reel-next aria-label="Next frame">↓</button>
+        </div>
+
+        <div class="reel-viewport" data-reel-viewport>
+          <div class="reel-track" data-reel-track>
+            <article class="reel-slide reel-artist-slide" data-reel-slide data-reel-kind="artist" data-tone="#e8b6c8" data-palette="saint-jules" data-filter="portrait" data-artist-name="Saint Jules" id="artist-saint-jules">
+              <figure class="reel-film-card reel-artist-card" data-reel-art>
+                <div class="reel-perf reel-perf-top" aria-hidden="true"></div>
+                <div class="reel-image-pair">
+                  <img src="assets/saint-jules-foil-art.jpeg" alt="A Polaroid portrait of Saint Jules on reflective silver foil" width="360" height="360" />
+                </div>
+                <figcaption><span>SAINT JULES</span><span>GLASSWALL RECORDS</span></figcaption>
+                <div class="reel-perf reel-perf-bottom" aria-hidden="true"></div>
+              </figure>
+
+              <div class="reel-slide-copy reel-artist-copy">
+                <p class="eyebrow" data-artist-tagline>Artist · Glasswall Records</p>
+                <h2 data-artist-heading>Saint Jules</h2>
+                <div class="artist-lenses" role="group" aria-label="Explore Saint Jules">
+                  <button type="button" aria-pressed="true" data-artist-filter="portrait">Portrait</button>
+                  <button type="button" aria-pressed="false" data-artist-filter="listen">Listen</button>
+                  <button type="button" aria-pressed="false" data-artist-filter="seeking">Looking for</button>
+                </div>
+                <div class="artist-layers" aria-live="polite">
+                  <div data-artist-layer="portrait">
+                    <p data-artist-bio>Saint Jules is a Maryland artist and the first artist released through Glasswall Records.</p>
+                    <a class="artist-layer-link" href="https://www.saintjules.org/" target="_blank" rel="noopener noreferrer" data-artist-website>Visit Saint Jules <span aria-hidden="true">↗</span></a>
+                  </div>
+                  <div data-artist-layer="listen" hidden>
+                    <p data-artist-music><i>Lord Have Mercy, He’s A Crash Dummy!</i> is out now. See the album and listening information below.</p>
+                    <a class="artist-layer-link" href="#releases">Go to the music <span aria-hidden="true">↓</span></a>
+                  </div>
+                  <div data-artist-layer="seeking" hidden>
+                    <p data-artist-seeking>For booking, press, production, or collaboration inquiries, contact Glasswall Records.</p>
+                    <a class="artist-layer-link" href="mailto:hello@glasswallrecords.com?subject=Saint%20Jules%20collaboration">Talk to the label <span aria-hidden="true">↗</span></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
           </div>
         </div>
 
-        <aside class="hero-console reveal" aria-label="Glasswall service overview">
-          <div class="console-head">
-            <span>GW / 001</span>
-            <span class="live-dot"><i></i> Open to projects</span>
-          </div>
-          <div class="console-statement">
-            <span>FROM</span>
-            <strong>FIRST IDEA</strong>
-            <span>TO</span>
-            <strong>FULL RELEASE</strong>
-          </div>
-          <div class="console-footer">
-            <span>Production</span>
-            <span>Development</span>
-            <span>Release</span>
-            <span>Content</span>
-            <span>Events</span>
-            <span>Direct-to-fan</span>
-          </div>
-        </aside>
       </div>
+    </section>
 
-      <div class="marquee" aria-label="Glasswall capabilities">
-        <div class="marquee-track">
-          <span>MAKE THE RECORD</span><i>✦</i><span>BUILD THE WORLD</span><i>✦</i><span>PLAN THE RELEASE</span><i>✦</i><span>FIND THE AUDIENCE</span><i>✦</i>
-          <span>MAKE THE RECORD</span><i>✦</i><span>BUILD THE WORLD</span><i>✦</i><span>PLAN THE RELEASE</span><i>✦</i><span>FIND THE AUDIENCE</span><i>✦</i>
+    <section class="release-section" id="releases" aria-labelledby="release-heading">
+      <div class="release-heading-wrap">
+        <div class="section-label light">
+          <p>Current work</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section services" id="services">
-      <div class="section-heading reveal">
-        <p class="section-index">01 / WHAT WE DO</p>
-        <h2>One company.<br />The parts artists usually chase separately.</h2>
+        <h2 id="release-heading">Latest from<br />the album.</h2>
       </div>
 
-      <div class="service-list">
-        <article class="service-row reveal">
-          <button class="service-toggle" type="button" aria-expanded="true">
-            <span class="service-number">01</span>
-            <span class="service-name">Music</span>
-            <span class="service-short">Make it sound finished.</span>
-            <span class="service-icon" aria-hidden="true">−</span>
-          </button>
-          <div class="service-detail">
-            <p>Production, writing support, recording direction, arrangement, song selection, feedback, and getting the record across the finish line.</p>
-            <div class="service-tags"><span>Production</span><span>A&amp;R</span><span>Song finishing</span><span>Vocal direction</span></div>
+      <article class="release-feature" data-release-feature>
+        <figure class="release-artwork">
+          <img src="assets/saint-jules-foil-art.jpeg" alt="Saint Jules Polaroid artwork on reflective silver foil" width="360" height="360" />
+        </figure>
+        <div class="release-details">
+          <p class="release-number">ALBUM / OUT NOW</p>
+          <h3>Saint Jules</h3>
+          <p class="release-name">Lord Have Mercy, He’s A Crash Dummy!</p>
+          <p class="release-description">The 13-track Saint Jules album is available now. Visit the artist site to listen and view the full track list.</p>
+          <div class="release-actions">
+            <a class="light-link" href="https://www.saintjules.org/" target="_blank" rel="noopener noreferrer">Listen to the album <span aria-hidden="true">↗</span></a>
+            <button class="track-preview" type="button" hidden data-track-preview>Play preview</button>
           </div>
-        </article>
-
-        <article class="service-row reveal">
-          <button class="service-toggle" type="button" aria-expanded="false">
-            <span class="service-number">02</span>
-            <span class="service-name">Identity</span>
-            <span class="service-short">Make it feel like you.</span>
-            <span class="service-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="service-detail" hidden>
-            <p>Creative direction, references, artist positioning, visual language, project concepts, bios, cover direction, and a world people can recognize.</p>
-            <div class="service-tags"><span>Creative direction</span><span>Artist development</span><span>Visual systems</span><span>Story</span></div>
-          </div>
-        </article>
-
-        <article class="service-row reveal">
-          <button class="service-toggle" type="button" aria-expanded="false">
-            <span class="service-number">03</span>
-            <span class="service-name">Release</span>
-            <span class="service-short">Give the work somewhere to go.</span>
-            <span class="service-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="service-detail" hidden>
-            <p>Rollout plans, asset lists, content ideas, metadata and distribution prep, release calendars, launch-day coordination, and next-step strategy.</p>
-            <div class="service-tags"><span>Rollouts</span><span>Content plans</span><span>Distribution prep</span><span>Project management</span></div>
-          </div>
-        </article>
-
-        <article class="service-row reveal">
-          <button class="service-toggle" type="button" aria-expanded="false">
-            <span class="service-number">04</span>
-            <span class="service-name">Audience</span>
-            <span class="service-short">Build beyond the stream.</span>
-            <span class="service-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="service-detail" hidden>
-            <p>Shows, listening experiences, merch and physical products, direct-to-fan offers, brand-ready materials, partnerships, and repeatable ways to stay connected.</p>
-            <div class="service-tags"><span>Events</span><span>Merch</span><span>Physical media</span><span>Partnerships</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section process" id="process">
-      <div class="process-card reveal">
-        <div class="process-copy">
-          <p class="section-index">02 / HOW IT STARTS</p>
-          <h2>Bring us what you have.</h2>
-          <p>A voice memo. A rough mix. A half-finished project. A new artist with no plan. We start with the real situation—not the version you think you are supposed to present.</p>
-          <a class="button button-light" href="#contact">Start the conversation</a>
         </div>
+      </article>
 
-        <ol class="steps">
-          <li><span>01</span><div><strong>Listen</strong><p>What are you making, and what is actually getting in the way?</p></div></li>
-          <li><span>02</span><div><strong>Choose</strong><p>We define the next useful move instead of creating a giant fake plan.</p></div></li>
-          <li><span>03</span><div><strong>Build</strong><p>We work beside you on the music, release, content, or live moment.</p></div></li>
-          <li><span>04</span><div><strong>Leave clearer</strong><p>You know what is done, what comes next, and what belongs to you.</p></div></li>
-        </ol>
+      <div class="catalog" data-catalog aria-live="polite"></div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="about-copy">
+        <p class="eyebrow">Glasswall Records · Maryland</p>
+        <h2 id="about-heading">Independent structure. Direct artist support.</h2>
+        <p>
+          Glasswall works directly with artists across recording, production, visual direction, release planning, and live opportunities.
+        </p>
+        <ul>
+          <li>Artist development</li>
+          <li>Recording + production</li>
+          <li>Creative direction</li>
+          <li>Release strategy</li>
+        </ul>
       </div>
     </section>
 
-    <section class="section audience" id="for-you">
-      <div class="section-heading compact reveal">
-        <p class="section-index">03 / WHO WALKS IN</p>
-        <h2>You do not need to be “ready.”<br />You need a real next step.</h2>
-      </div>
-
-      <div class="audience-grid">
-        <article class="audience-card reveal">
-          <span class="card-code">START / 01</span>
-          <h3>I think I want to make music.</h3>
-          <p>You just opened FL or Logic, picked up a guitar, bought a mic, or only have an idea. We help you begin without making you feel behind.</p>
-          <a href="#contact" data-prefill="I am new to making music and want help getting started.">Begin here <span>↗</span></a>
-        </article>
-
-        <article class="audience-card reveal">
-          <span class="card-code">BUILD / 02</span>
-          <h3>I have music. It needs a world.</h3>
-          <p>You have demos, songs, or a full project. We help finish it, position it, package it, and decide what the release should actually become.</p>
-          <a href="#contact" data-prefill="I have music in progress and need help finishing or releasing it.">Build the project <span>↗</span></a>
-        </article>
-
-        <article class="audience-card reveal">
-          <span class="card-code">TEAM / 03</span>
-          <h3>I manage or support an artist.</h3>
-          <p>You need creative backup, production, rollout structure, assets, or another person who can see the whole board with you.</p>
-          <a href="#contact" data-prefill="I manage or support an artist and need a creative partner.">Add support <span>↗</span></a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section studio" id="studio">
-      <div class="studio-shell reveal">
-        <div class="studio-title">
-          <span class="eyebrow-label">ROOMS / PEOPLE / MOMENTS</span>
-          <h2>Not everything important happens online.</h2>
+    <section class="submission-section" id="submit" aria-labelledby="submission-heading">
+      <div class="submission-intro">
+        <div class="section-label">
+          <p>Open submissions</p>
         </div>
-        <div class="studio-copy">
-          <p>Glasswall’s home base is Mostly Just Storage, our studio and small event space in Harford County. It gives sessions, content days, listening rooms, release nights, and beginner workshops somewhere real to happen.</p>
-          <div class="studio-pills">
-            <span>Studio sessions</span><span>Listening rooms</span><span>Release nights</span><span>Content days</span><span>Beginner sessions</span><span>Artist clinics</span>
-          </div>
-          <a class="studio-link" href="https://mostlyjuststorage.studio" target="_blank" rel="noopener noreferrer">Visit Mostly Just Storage <span aria-hidden="true">↗</span></a>
-        </div>
+        <h2 id="submission-heading">Send your work.<br />Or start a conversation.</h2>
+        <p>
+          Music is welcome, but it is not the only reason to reach out. A link and a few honest sentences are enough.
+        </p>
+        <a href="mailto:hello@glasswallrecords.com">hello@glasswallrecords.com</a>
       </div>
-    </section>
 
-    <section class="section note-section">
-      <div class="big-note reveal">
-        <span>GLASSWALL IS</span>
-        <p>clear help, honest scope, shared taste, and a team that tells you what the next move is.</p>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="contact-grid reveal">
-        <div class="contact-intro">
-          <p class="section-index">04 / CONTACT</p>
-          <h2>What are<br />you building?</h2>
-          <p>Send the rough version. You do not need a polished pitch.</p>
-          <a class="direct-email" href="mailto:hello@glasswallrecords.com">hello@glasswallrecords.com</a>
-        </div>
-
-        <form class="contact-form" data-contact-form>
+      <form class="submission-form" data-submission-form>
+        <div class="field-pair">
           <label>
-            <span>Name / artist name</span>
-            <input type="text" name="name" autocomplete="name" required />
+            <span>Your name</span>
+            <input type="text" name="name" autocomplete="name" maxlength="100" required />
           </label>
+          <label>
+            <span>Artist / project name</span>
+            <input type="text" name="artistName" maxlength="120" required />
+          </label>
+        </div>
+        <div class="field-pair">
           <label>
             <span>Email</span>
-            <input type="email" name="email" autocomplete="email" required />
+            <input type="email" name="email" autocomplete="email" maxlength="160" required />
           </label>
           <label>
-            <span>Where are you right now?</span>
-            <select name="stage">
-              <option>I am just starting</option>
-              <option>I have demos or songs in progress</option>
-              <option>I am preparing a release</option>
-              <option>I manage or support an artist</option>
-              <option>I am looking for a creative partnership</option>
+            <span>What brings you here?</span>
+            <select name="stage" required>
+              <option value="">Choose one</option>
+              <option>Music submission</option>
+              <option>Artist support</option>
+              <option>Creative partnership</option>
+              <option>Live or booking opportunity</option>
+              <option>Press or media</option>
+              <option>Something else</option>
             </select>
           </label>
-          <label>
-            <span>Tell us the unpolished version</span>
-            <textarea name="message" rows="5" placeholder="I have three demos, no cover, and I do not know which song should come first…" required></textarea>
-          </label>
-          <button class="button button-solid submit-button" type="submit">Create email <span aria-hidden="true">↗</span></button>
-          <p class="form-note" data-form-note>This opens a ready-to-send email in your mail app.</p>
-        </form>
-      </div>
+        </div>
+        <label>
+          <span>Music or project link <small>(optional unless submitting music)</small></span>
+          <input type="url" name="musicUrl" inputmode="url" placeholder="SoundCloud, Dropbox, Drive, Bandcamp, portfolio…" maxlength="500" />
+        </label>
+        <label>
+          <span>Instagram or website <small>(optional)</small></span>
+          <input type="url" name="socialUrl" inputmode="url" maxlength="500" />
+        </label>
+        <label>
+          <span>What should we know?</span>
+          <textarea name="message" rows="5" maxlength="2500" placeholder="Tell us what you are making, what you need, or what you want to build together." required></textarea>
+        </label>
+        <label class="honeypot" aria-hidden="true">
+          <span>Website</span>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" />
+        </label>
+        <label class="consent-row">
+          <input type="checkbox" name="consent" required />
+          <span>I own or have permission to share any work linked here and understand that submitting it does not create an agreement with Glasswall.</span>
+        </label>
+        <div class="submit-row">
+          <button type="submit" data-submit-button>Send private submission <span aria-hidden="true">↗</span></button>
+          <p role="status" data-form-status>Your link stays with the Glasswall team.</p>
+        </div>
+      </form>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div>
-      <a class="brand footer-brand" href="#top">
-        <span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span class="brand-word">GLASSWALL</span>
-      </a>
-      <p>Independent music company.<br />Built with artists, not around them.</p>
+    <a class="wordmark footer-wordmark" href="#top" aria-label="Back to top">
+      <span>GLASSWALL</span>
+      <small>RECORDS</small>
+    </a>
+    <div class="footer-meta">
+      <span>© <span data-year>2026</span> Glasswall Records</span>
+      <span>Maryland, USA</span>
     </div>
     <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#studio">Studio</a>
       <a href="mailto:hello@glasswallrecords.com">Email</a>
-    </div>
-    <div class="footer-meta">
-      <span>Maryland / Worldwide</span>
-      <span>© <span data-year></span> Glasswall</span>
+      <a href="https://studio.saintjules.org/studio" target="_blank" rel="noopener noreferrer nofollow">Label studio</a>
     </div>
   </footer>
 </body>

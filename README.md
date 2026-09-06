@@ -1,25 +1,23 @@
-# Glasswall website — upgraded build
+# Glasswall Records
 
-A cleaner, more company-forward version of the Glasswall site.
+The public label site for [glasswallrecords.com](https://glasswallrecords.com/).
 
-## Replace the current GitHub Pages files
+## Publishing
 
-Upload these three files to the root of `SMPchase/Glasswallrecords.com`:
+The site is plain HTML, CSS, and JavaScript and is published from the root of the `main` branch with GitHub Pages. The `CNAME` file must remain in place.
 
-- `index.html`
-- `styles.css`
-- `script.js`
+Public pages include a complete authored fallback, then load published label content from the protected Saint Jules publishing system at `https://room.saintjules.org/api/glasswall`. If that service is unavailable, the fallback artwork and Saint Jules feature remain visible.
 
-Keep the existing `CNAME` file in the repository.
+The private owner dashboard is at [studio.saintjules.org/studio](https://studio.saintjules.org/studio). It manages label settings, artwork, artist profiles, music, and the submissions inbox.
 
-## Before publishing
+## Artwork
 
-Search all three files for `hello@glasswallrecords.com` and replace it only if a different inbox should receive inquiries.
+The public Saint Jules profile and release use only the supplied foil artwork, as requested:
 
-## Adding images later
+- `saint-jules-foil-art.jpeg`
 
-The current build intentionally does not depend on images. Images can later be added as project case studies without leaving empty placeholder blocks in the live site.
+`glasswall-social-card.jpeg` is generated label art used only for link-preview metadata; it is not displayed in the page. The foil derivative is kept inside a film frame rather than stretched into a full-browser background because the source is small. Other artwork can be uploaded later through Studio.
 
-## Connected studio
+## Submissions
 
-The Studio section links to `https://mostlyjuststorage.studio` as Glasswall’s physical home base.
+The public form posts to the Glasswall API and stores submissions privately for review in Studio. `hello@glasswallrecords.com` remains visible as a fallback contact.
