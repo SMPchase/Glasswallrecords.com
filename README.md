@@ -8,7 +8,7 @@ The site is plain HTML, CSS, and JavaScript and is published from the root of th
 
 Public pages include a complete authored fallback, then load published label content from the protected Saint Jules publishing system at `https://room.saintjules.org/api/glasswall`. If that service is unavailable, the fallback artwork and Saint Jules feature remain visible.
 
-The private owner dashboard is at [studio.saintjules.org/studio](https://studio.saintjules.org/studio). It manages label settings, artwork, artist profiles, music, and the submissions inbox.
+The private owner dashboard is at [studio.saintjules.org/studio](https://studio.saintjules.org/studio). It manages label settings, artwork, artist profiles, music, the release section’s visibility, heading and color, and the submissions inbox.
 
 ## Artwork
 
@@ -16,7 +16,7 @@ The public Saint Jules profile and release use only the supplied foil artwork, a
 
 - `saint-jules-foil-art.jpeg`
 
-`glasswall-social-card.jpeg` is generated label art used only for link-preview metadata; it is not displayed in the page. The foil derivative is kept inside a film frame rather than stretched into a full-browser background because the source is small. Other artwork can be uploaded later through Studio.
+The foil derivative uses a deliberately low-fi print texture and is not stretched into a full-browser background because the source is small. Other artwork can be uploaded later through Studio.
 
 ## Submissions
 

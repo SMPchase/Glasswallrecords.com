@@ -57,6 +57,18 @@ function safeUrl(value) {
   }
 }
 
+function readableColorForHex(value) {
+  const hex = text(value);
+  if (!/^#[0-9a-f]{6}$/i.test(hex)) return null;
+  const red = Number.parseInt(hex.slice(1, 3), 16);
+  const green = Number.parseInt(hex.slice(3, 5), 16);
+  const blue = Number.parseInt(hex.slice(5, 7), 16);
+  const luminance = (0.2126 * red + 0.7152 * green + 0.0722 * blue) / 255;
+  return luminance > 0.58
+    ? { text: "#151515", muted: "rgba(21, 21, 21, 0.64)", line: "rgba(21, 21, 21, 0.28)" }
+    : { text: "#ffffff", muted: "rgba(255, 255, 255, 0.64)", line: "rgba(255, 255, 255, 0.25)" };
+}
+
 function mediaDetails(value) {
   if (typeof value === "string") return { url: safeUrl(value), alt: "" };
   const source = record(value);
@@ -124,6 +136,29 @@ function hydrateSettings(payload) {
   const intro = firstText(settings, ["introduction", "intro", "description", "heroIntro"]);
   const introNode = document.querySelector("[data-site-intro]");
   if (intro && introNode) introNode.textContent = intro;
+
+  const releaseSection = document.querySelector("[data-release-section]");
+  const releasesEnabled = settings.releasesSectionEnabled;
+  if (typeof releasesEnabled === "boolean" && releaseSection) {
+    releaseSection.hidden = !releasesEnabled;
+    document.querySelectorAll('a[href="#releases"]').forEach((link) => {
+      link.hidden = !releasesEnabled;
+    });
+  }
+  const releasesEyebrow = firstText(settings, ["releasesEyebrow"]);
+  const releasesHeading = firstText(settings, ["releasesHeading"]);
+  const releasesBackground = firstText(settings, ["releasesBackground"]);
+  const releaseEyebrowNode = document.querySelector("[data-release-eyebrow]");
+  const releaseHeadingNode = document.querySelector("[data-release-heading]");
+  if (releasesEyebrow && releaseEyebrowNode) releaseEyebrowNode.textContent = releasesEyebrow;
+  if (releasesHeading && releaseHeadingNode) releaseHeadingNode.textContent = releasesHeading;
+  const releaseColors = readableColorForHex(releasesBackground);
+  if (releaseSection && releaseColors) {
+    releaseSection.style.setProperty("--release-background", releasesBackground);
+    releaseSection.style.setProperty("--release-text", releaseColors.text);
+    releaseSection.style.setProperty("--release-muted", releaseColors.muted);
+    releaseSection.style.setProperty("--release-line", releaseColors.line);
+  }
 
   const heroMedia = mediaDetails(
     settings.heroArtwork || settings.heroArt || settings.heroImage || settings.hero,
@@ -220,17 +255,6 @@ function artistTracks(artist, tracks) {
   });
 }
 
-function appendFilmEdges(figure, label, frame) {
-  const top = createNode("div", "reel-perf reel-perf-top");
-  top.setAttribute("aria-hidden", "true");
-  const caption = document.createElement("figcaption");
-  caption.append(createNode("span", "", label), createNode("span", "", frame));
-  const bottom = createNode("div", "reel-perf reel-perf-bottom");
-  bottom.setAttribute("aria-hidden", "true");
-  figure.prepend(top);
-  figure.append(caption, bottom);
-}
-
 function createArtistLink(href, label) {
   const link = createNode("a", "artist-layer-link");
   link.href = href;
@@ -272,9 +296,9 @@ function createArtistSlide(entry, index, tracks) {
   const slug = firstText(artist, ["slug"]) || normalizeName(name).replace(/\s+/g, "-");
   slide.id = `artist-${slug || frameNumber}`;
 
-  const figure = createNode("figure", "reel-film-card reel-artist-card");
+  const figure = createNode("figure", "artist-art-card");
   figure.dataset.reelArt = "";
-  const imageWrap = createNode("div", "reel-image-pair");
+  const imageWrap = createNode("div", "artist-image");
   const image = artistImage(artist);
   if (image.url) {
     const portrait = document.createElement("img");
@@ -285,7 +309,7 @@ function createArtistSlide(entry, index, tracks) {
   } else if (isSaintJules) {
     const foil = document.createElement("img");
     foil.src = "assets/saint-jules-foil-art.jpeg";
-    foil.alt = "Saint Jules Polaroid artwork on reflective silver foil";
+    foil.alt = "Saint Jules album artwork on reflective silver foil";
     foil.width = 360;
     foil.height = 360;
     foil.loading = "lazy";
@@ -295,12 +319,11 @@ function createArtistSlide(entry, index, tracks) {
     const placeholder = createNode("div", "empty-exposure artist-placeholder");
     placeholder.append(
       createNode("span", "", name.split(/\s+/).map((part) => part[0]).join("").slice(0, 2)),
-      createNode("small", "", "PORTRAIT PENDING"),
+      createNode("small", "", "ARTWORK COMING SOON"),
     );
     imageWrap.append(placeholder);
   }
   figure.append(imageWrap);
-  appendFilmEdges(figure, name, "GLASSWALL RECORDS");
 
   const copy = createNode("div", "reel-slide-copy reel-artist-copy");
   copy.append(createNode("p", "eyebrow", tagline), createNode("h2", "", name));
@@ -308,7 +331,7 @@ function createArtistSlide(entry, index, tracks) {
   const lenses = createNode("div", "artist-lenses");
   lenses.setAttribute("role", "group");
   lenses.setAttribute("aria-label", `Explore ${name}`);
-  const aboutButton = createNode("button", "", "Portrait");
+  const aboutButton = createNode("button", "", "About");
   aboutButton.type = "button";
   aboutButton.dataset.artistFilter = "portrait";
   aboutButton.setAttribute("aria-pressed", "true");

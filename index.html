@@ -11,11 +11,7 @@
   <meta property="og:title" content="Glasswall Records — Independent label" />
   <meta property="og:description" content="An independent Maryland label. Meet the artists, hear releases, and submit your work." />
   <meta property="og:url" content="https://glasswallrecords.com/" />
-  <meta property="og:image" content="https://glasswallrecords.com/assets/glasswall-social-card.jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Glasswall Records editorial film artwork" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="summary" />
   <title>Glasswall Records — Independent label</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
@@ -67,20 +63,7 @@
       </div>
 
       <figure class="hero-art" data-hero-art aria-label="Glasswall Records label artwork" hidden>
-        <div class="film-edge" aria-hidden="true">
-          <span>GLASSWALL RECORDS</span><span>MARYLAND</span>
-        </div>
-        <div class="film-frame" data-hero-frame>
-          <div class="film-title" aria-hidden="true">
-            <span>GLASS</span>
-            <span>WALL</span>
-          </div>
-          <p>RECORDS + DEVELOPMENT<br />MARYLAND, USA</p>
-        </div>
-        <figcaption>
-          <span>INDEPENDENT LABEL</span>
-          <span>MARYLAND</span>
-        </figcaption>
+        <div class="hero-image-frame" data-hero-frame></div>
       </figure>
 
     </section>
@@ -91,32 +74,29 @@
           <div class="section-label">
             <p>Meet the artists</p>
           </div>
-          <p class="reel-instruction">Scroll to reveal <i aria-hidden="true">↓</i></p>
+          <p class="reel-instruction">Scroll for more artists <i aria-hidden="true">↓</i></p>
         </div>
 
-        <div class="reel-controls" aria-label="Artist reel controls">
-          <button type="button" data-reel-previous aria-label="Previous frame">↑</button>
+        <div class="reel-controls" aria-label="Artist navigation">
+          <button type="button" data-reel-previous aria-label="Previous artist">↑</button>
           <div class="reel-progress" aria-hidden="true"><i data-reel-progress></i></div>
-          <button type="button" data-reel-next aria-label="Next frame">↓</button>
+          <button type="button" data-reel-next aria-label="Next artist">↓</button>
         </div>
 
         <div class="reel-viewport" data-reel-viewport>
           <div class="reel-track" data-reel-track>
             <article class="reel-slide reel-artist-slide" data-reel-slide data-reel-kind="artist" data-tone="#e8b6c8" data-palette="saint-jules" data-filter="portrait" data-artist-name="Saint Jules" id="artist-saint-jules">
-              <figure class="reel-film-card reel-artist-card" data-reel-art>
-                <div class="reel-perf reel-perf-top" aria-hidden="true"></div>
-                <div class="reel-image-pair">
-                  <img src="assets/saint-jules-foil-art.jpeg" alt="A Polaroid portrait of Saint Jules on reflective silver foil" width="360" height="360" />
+              <figure class="artist-art-card" data-reel-art>
+                <div class="artist-image">
+                  <img src="assets/saint-jules-foil-art.jpeg" alt="Saint Jules album artwork on reflective silver foil" width="360" height="360" />
                 </div>
-                <figcaption><span>SAINT JULES</span><span>GLASSWALL RECORDS</span></figcaption>
-                <div class="reel-perf reel-perf-bottom" aria-hidden="true"></div>
               </figure>
 
               <div class="reel-slide-copy reel-artist-copy">
                 <p class="eyebrow" data-artist-tagline>Artist · Glasswall Records</p>
                 <h2 data-artist-heading>Saint Jules</h2>
                 <div class="artist-lenses" role="group" aria-label="Explore Saint Jules">
-                  <button type="button" aria-pressed="true" data-artist-filter="portrait">Portrait</button>
+                  <button type="button" aria-pressed="true" data-artist-filter="portrait">About</button>
                   <button type="button" aria-pressed="false" data-artist-filter="listen">Listen</button>
                   <button type="button" aria-pressed="false" data-artist-filter="seeking">Looking for</button>
                 </div>
@@ -143,12 +123,12 @@
       </div>
     </section>
 
-    <section class="release-section" id="releases" aria-labelledby="release-heading">
+    <section class="release-section" id="releases" aria-labelledby="release-heading" data-release-section>
       <div class="release-heading-wrap">
         <div class="section-label light">
-          <p>Current work</p>
+          <p data-release-eyebrow>Current work</p>
         </div>
-        <h2 id="release-heading">Latest from<br />the album.</h2>
+        <h2 id="release-heading" data-release-heading>Latest from<br />the album.</h2>
       </div>
 
       <article class="release-feature" data-release-feature>
