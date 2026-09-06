@@ -8,7 +8,7 @@ The site is plain HTML, CSS, and JavaScript and is published from the root of th
 
 Public pages include a complete authored fallback, then load published label content from the protected Saint Jules publishing system at `https://room.saintjules.org/api/glasswall`. If that service is unavailable, the fallback artwork and Saint Jules feature remain visible.
 
-The private owner dashboard is at [studio.saintjules.org/studio](https://studio.saintjules.org/studio). It manages label settings, artwork, artist profiles, music, the release section’s visibility, heading and color, and the submissions inbox.
+The private owner dashboard is at [studio.saintjules.org/studio](https://studio.saintjules.org/studio). It manages label settings, artwork, artist profiles, the latest release’s title, artist, description, cover, preview audio, listening link and publication state, the release section’s visibility, heading and color, and the submissions inbox.
 
 ## Artwork
 

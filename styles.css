@@ -722,6 +722,16 @@ h3 {
   border-bottom: 1px solid var(--release-line);
 }
 
+.release-feature.without-artwork {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.release-feature.without-artwork .release-artwork,
+.release-description[hidden],
+.release-actions .light-link[hidden] {
+  display: none;
+}
+
 .release-artwork {
   position: relative;
   display: grid;

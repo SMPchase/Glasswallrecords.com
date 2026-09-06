@@ -57,6 +57,17 @@ function safeUrl(value) {
   }
 }
 
+function safeHttpsUrl(value) {
+  const candidate = text(value);
+  if (!candidate) return "";
+  try {
+    const url = new URL(candidate);
+    return url.protocol === "https:" ? url.href : "";
+  } catch {
+    return "";
+  }
+}
+
 function readableColorForHex(value) {
   const hex = text(value);
   if (!/^#[0-9a-f]{6}$/i.test(hex)) return null;
@@ -495,6 +506,11 @@ function renderReleases(payload) {
   const type = firstText(primary, ["type", "releaseType"]);
   const description = firstText(primary, ["description", "summary"]);
   const artwork = releaseArtwork(primary);
+  const leadTrack = record(list(primary.tracks)[0]);
+  const listenUrl = safeHttpsUrl(
+    firstText(primary, ["listenUrl", "listen_url"]) ||
+      firstText(leadTrack, ["listenUrl", "listen_url"]),
+  );
 
   const primaryCard = document.querySelector("[data-release-feature]");
   if (primaryCard) {
@@ -503,13 +519,35 @@ function renderReleases(payload) {
     const code = primaryCard.querySelector(".release-number");
     const body = primaryCard.querySelector(".release-description");
     const image = primaryCard.querySelector("img");
-    if (artist && heading) heading.textContent = artist;
-    if (title && name) name.textContent = title;
-    if (type && code) code.textContent = `${type.toUpperCase()} / OUT NOW`;
-    if (description && body) body.textContent = description;
+    const releaseLink = primaryCard.querySelector("[data-release-link]");
+    if (heading) heading.textContent = artist || "Glasswall Records";
+    if (name) name.textContent = title || "Untitled release";
+    if (code) code.textContent = type ? `${type.toUpperCase()} / OUT NOW` : "OUT NOW";
+    if (body) {
+      body.textContent = description;
+      body.hidden = !description;
+    }
     if (artwork.url && image) {
       image.src = artwork.url;
       image.alt = artwork.alt || `${title || artist || "Glasswall release"} cover artwork`;
+      image.hidden = false;
+      primaryCard.classList.remove("without-artwork");
+    } else {
+      image?.removeAttribute("src");
+      if (image) image.hidden = true;
+      primaryCard.classList.add("without-artwork");
+    }
+    if (releaseLink) {
+      releaseLink.hidden = !listenUrl;
+      if (listenUrl) {
+        releaseLink.href = listenUrl;
+        const arrow = document.createElement("span");
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.textContent = "↗";
+        releaseLink.replaceChildren(document.createTextNode("Listen to the release "), arrow);
+      } else {
+        releaseLink.removeAttribute("href");
+      }
     }
   }
 
